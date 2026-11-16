@@ -2,8 +2,8 @@
 % known misconception for two-digit column subtraction is written as a procedure; a student's
 % answers are explained by the procedures that give every one of them. The correct procedure is
 % one of them, so right answers are explained too.
-%?- solve(correct, 52, 17, A).                   % A = 35
-%?- solve(smaller_from_larger, 52, 17, A).       % A = 45: takes 2 from 7 instead of borrowing
+%?- solve(correct, 52, 18, A).                   % A = 34
+%?- solve(smaller_from_larger, 52, 18, A).       % A = 46: takes 2 from 8 instead of borrowing
 %?- diagnose([52-17-45, 61-28-47], D).            % D = [smaller_from_larger]
 :- module(misconceptions, [procedure/1, solve/4, diagnose/2]).
 :- use_module(library(lists)).

@@ -6,8 +6,8 @@ work out the buggy procedure that explains a student's wrong answers. Each known
 
 ```prolog
 ?- use_module(prolog/misconceptions).
-?- solve(correct, 52, 17, A).                   % A = 35
-?- solve(smaller_from_larger, 52, 17, A).       % A = 45: takes 2 from 7 instead of borrowing
+?- solve(correct, 52, 18, A).                   % A = 34
+?- solve(smaller_from_larger, 52, 18, A).       % A = 46: takes 2 from 8 instead of borrowing
 ?- diagnose([52-17-45, 61-28-47], D).            % D = [smaller_from_larger]
 ```
 
@@ -17,7 +17,7 @@ work out the buggy procedure that explains a student's wrong answers. Each known
 
 1. Each procedure explains its own answers: diagnosing a set of its answers always includes it.
 2. Every procedure in a diagnosis really gives every answer.
-3. Problems that need borrowing tell the misconceptions apart: on 52 - 17 each procedure gives a different answer.
+3. Problems that need borrowing tell the misconceptions apart: on 52 - 18 each procedure gives a different answer.
 4. With no borrowing needed, smaller_from_larger, borrow_no_decrement and zero_when_smaller all agree with correct.
 
 ```sh

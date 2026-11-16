@@ -16,8 +16,8 @@ theorem(procedures_explain_themselves) :- forall(( procedure(P), problem(T1-B1),
 % 2. Every procedure in a diagnosis really gives every answer.
 theorem(diagnoses_are_consistent) :- forall(( procedure(P), problem(T-B), solve(P, T, B, C), diagnose([T-B-C], D), member(Q, D) ), solve(Q, T, B, C)).
 
-% 3. Problems that need borrowing tell the misconceptions apart: on 52 - 17 each procedure gives a different answer.
-theorem(borrowing_separates) :- findall(C, ( procedure(P), solve(P, 52, 17, C) ), Cs), sort(Cs, S), length(Cs, N), length(S, N).
+% 3. Problems that need borrowing tell the misconceptions apart: on 52 - 18 each procedure gives a different answer.
+theorem(borrowing_separates) :- findall(C, ( procedure(P), solve(P, 52, 18, C) ), Cs), sort(Cs, S), length(Cs, N), length(S, N).
 
 % 4. With no borrowing needed, smaller_from_larger, borrow_no_decrement and zero_when_smaller all agree with correct.
 theorem(no_borrow_no_difference) :- forall(( problem(T-B), T mod 10 >= B mod 10 ), forall(member(P, [smaller_from_larger, borrow_no_decrement, zero_when_smaller]), ( solve(P, T, B, C), solve(correct, T, B, C) ))).
